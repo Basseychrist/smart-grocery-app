@@ -6,10 +6,9 @@
     <meta name="description" content="Smart Grocery App - Your one-stop solution for grocery shopping. Compare prices, find stores, and manage your shopping list.">
     <meta name="keywords" content="grocery, shopping, price comparison, store locator, shopping list">
     <meta name="author" content="Eno-obong Etim Bassey">
-
-
     <title>Home - Smart Grocery App</title>
     <link rel="stylesheet" href="css/styles.css">
+    <script src="script/scripts.js" defer></script>
 </head>
 <body>
     <header>
@@ -23,6 +22,14 @@
     </header>
     <main>
         <section>
+            <h2>Search for Products</h2>
+            <form id="search-form">
+                <input type="text" id="search-input" placeholder="Search for a product..." required>
+                <button type="submit">Search</button>
+            </form>
+            <div id="search-results"></div>
+        </section>
+        <section>
             <h2>Featured Products</h2>
             <!-- Add featured products here -->
         </section>
@@ -34,5 +41,6 @@
     <footer>
         <p>&copy; 2025 Smart Grocery App</p>
     </footer>
+    
 </body>
 </html>
