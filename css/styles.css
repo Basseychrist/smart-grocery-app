@@ -148,3 +148,151 @@ footer {
   margin-top: 0.5rem;
   border-radius: 5px;
 }
+
+/* Map Styling */
+#map {
+  width: 100%;
+  height: 500px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#store-search {
+  width: calc(100% - 120px);
+  padding: 0.5rem;
+  margin-right: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+#search-button {
+  padding: 0.5rem 1rem;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#search-button:hover {
+  background-color: #218838;
+}
+
+/* Price Comparison Results */
+#price-results {
+  margin-top: 1rem;
+}
+
+.price-item {
+  border: 1px solid #ddd;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 5px;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.price-item h3 {
+  margin: 0 0 0.5rem;
+  color: #28a745;
+}
+
+.price-item p {
+  margin: 0.5rem 0;
+  color: #555;
+}
+
+/* Shopping List */
+#shopping-list {
+  list-style: none;
+  padding: 0;
+  margin-top: 1rem;
+}
+
+#shopping-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem;
+  border: 1px solid #ddd;
+  margin-bottom: 0.5rem;
+  border-radius: 5px;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#shopping-list li button {
+  background-color: #ff9800;
+  color: white;
+  border: none;
+  padding: 0.3rem 0.5rem;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#shopping-list li button:hover {
+  background-color: #e68900;
+}
+
+#total-cost {
+  margin-top: 1rem;
+  font-weight: bold;
+  color: #28a745;
+}
+
+/* Discount Notifications */
+#discount-notifications {
+  margin-top: 1rem;
+}
+
+.notification {
+  border: 1px solid #ddd;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 5px;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.notification h3 {
+  margin: 0 0 0.5rem;
+  color: #28a745;
+}
+
+.notification p {
+  margin: 0.5rem 0;
+  color: #555;
+}
+
+/* Featured Products, Promotions, and Discounts */
+#featured-products,
+#promotions,
+#discount-notifications {
+  margin-top: 1rem;
+}
+
+.product-item,
+.promotion-item,
+.discount-item {
+  border: 1px solid #ddd;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 5px;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.product-item h3,
+.promotion-item h3,
+.discount-item h3 {
+  margin: 0 0 0.5rem;
+  color: #28a745;
+}
+
+.product-item p,
+.promotion-item p,
+.discount-item p {
+  margin: 0.5rem 0;
+  color: #555;
+}

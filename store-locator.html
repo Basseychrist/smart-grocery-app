@@ -1,33 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Smart Grocery App - Your one-stop solution for grocery shopping. Compare prices, find stores, and manage your shopping list.">
-    <meta name="keywords" content="grocery, shopping, price comparison, store locator, shopping list">
-    <meta name="author" content="Eno-obong Etim Bassey">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Find nearby stores and check item availability."
+    />
+    <meta
+      name="keywords"
+      content="store locator, grocery stores, item availability"
+    />
+    <meta name="author" content="Eno-obong Etim Bassey" />
     <title>Store Locator - Smart Grocery App</title>
-    <link rel="stylesheet" href="css/styles.css">
-    <script src="script/scripts.js" defer></script>
-</head>
-<body>
+    <link rel="stylesheet" href="css/styles.css" />
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDs6hc-05FPAz-aDULK5sMqM2dOpKgkWvQ&callback=initMap"
+      defer
+    ></script>
+    <script src="script/store-locator.js" defer></script>
+  </head>
+  <body>
     <header>
-        <h1>Store Locator</h1>
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="price-comparison.html">Price Comparison</a>
-            <a href="shopping-list.html">Shopping List</a>
-            <a href="user-dashboard.html">Dashboard</a>
-        </nav>
+      <h1>Store Locator</h1>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="price-comparison.html">Price Comparison</a>
+        <a href="shopping-list.html">Shopping List</a>
+        <a href="user-dashboard.html">Dashboard</a>
+      </nav>
     </header>
     <main>
-        <section>
-            <h2>Find Nearby Stores</h2>
-            <!-- Add map or store list here -->
-        </section>
+      <section>
+        <h2>Find Nearby Stores</h2>
+        <input
+          type="text"
+          id="store-search"
+          placeholder="Enter your location"
+        />
+        <button id="search-button">Search</button>
+        <div
+          id="map"
+          style="width: 100%; height: 500px; margin-top: 1rem"
+        ></div>
+      </section>
     </main>
     <footer>
-        <p>&copy; 2025 Smart Grocery App</p>
+      <p>&copy; 2025 Smart Grocery App</p>
     </footer>
-</body>
+  </body>
 </html>

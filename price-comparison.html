@@ -1,33 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Smart Grocery App - Your one-stop solution for grocery shopping. Compare prices, find stores, and manage your shopping list.">
-    <meta name="keywords" content="grocery, shopping, price comparison, store locator, shopping list">
-    <meta name="author" content="Eno-obong Etim Bassey">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Compare prices across stores to find the best deals."
+    />
+    <meta
+      name="keywords"
+      content="price comparison, grocery stores, best deals"
+    />
+    <meta name="author" content="Eno-obong Etim Bassey" />
     <title>Price Comparison - Smart Grocery App</title>
-    <link rel="stylesheet" href="css/styles.css">
-    <script src="script/scripts.js" defer></script>
-</head>
-<body>
+    <link rel="stylesheet" href="css/styles.css" />
+    <script src="script/price-comparison.js" defer></script>
+  </head>
+  <body>
     <header>
-        <h1>Price Comparison</h1>
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="shopping-list.html">Shopping List</a>
-            <a href="store-locator.html">Store Locator</a>
-            <a href="user-dashboard.html">Dashboard</a>
-        </nav>
+      <h1>Price Comparison</h1>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="shopping-list.html">Shopping List</a>
+        <a href="store-locator.html">Store Locator</a>
+        <a href="user-dashboard.html">Dashboard</a>
+      </nav>
     </header>
     <main>
-        <section>
-            <h2>Compare Prices</h2>
-            <!-- Add price comparison table or cards here -->
-        </section>
+      <section>
+        <h2>Compare Prices</h2>
+        <form id="price-comparison-form">
+          <input
+            type="text"
+            id="product-input"
+            placeholder="Enter product name..."
+            required
+          />
+          <button type="submit">Compare Prices</button>
+        </form>
+        <div id="price-results"></div>
+      </section>
     </main>
     <footer>
-        <p>&copy; 2025 Smart Grocery App</p>
+      <p>&copy; 2025 Smart Grocery App</p>
     </footer>
-</body>
+  </body>
 </html>

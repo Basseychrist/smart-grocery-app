@@ -1,33 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Smart Grocery App - Your one-stop solution for grocery shopping. Compare prices, find stores, and manage your shopping list.">
-    <meta name="keywords" content="grocery, shopping, price comparison, store locator, shopping list">
-    <meta name="author" content="Eno-obong Etim Bassey">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Manage your shopping list and estimate total costs."
+    />
+    <meta name="keywords" content="shopping list, grocery, price comparison" />
+    <meta name="author" content="Eno-obong Etim Bassey" />
     <title>Shopping List - Smart Grocery App</title>
-    <link rel="stylesheet" href="css/styles.css">
-    <script src="script/scripts.js" defer></script>
-</head>
-<body>
+    <link rel="stylesheet" href="css/styles.css" />
+    <script src="script/shopping-list.js" defer></script>
+  </head>
+  <body>
     <header>
-        <h1>Shopping List</h1>
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="price-comparison.html">Price Comparison</a>
-            <a href="store-locator.html">Store Locator</a>
-            <a href="user-dashboard.html">Dashboard</a>
-        </nav>
+      <h1>Shopping List</h1>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="price-comparison.html">Price Comparison</a>
+        <a href="store-locator.html">Store Locator</a>
+        <a href="user-dashboard.html">Dashboard</a>
+      </nav>
     </header>
     <main>
-        <section>
-            <h2>Your Shopping List</h2>
-            <!-- Add shopping list items here -->
-        </section>
+      <section>
+        <h2>Your Shopping List</h2>
+        <form id="add-item-form">
+          <input type="text" id="item-name" placeholder="Item name" required />
+          <input type="number" id="item-price" placeholder="Price" required />
+          <button type="submit">Add Item</button>
+        </form>
+        <ul id="shopping-list"></ul>
+        <p id="total-cost">Total Estimated Cost: $0.00</p>
+      </section>
     </main>
     <footer>
-        <p>&copy; 2025 Smart Grocery App</p>
+      <p>&copy; 2025 Smart Grocery App</p>
     </footer>
-</body>
+  </body>
 </html>
