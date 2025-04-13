@@ -17,6 +17,135 @@ async function testAPIConnection() {
 // Call the test function
 testAPIConnection();
 
+// Fetch and display featured products
+async function fetchFeaturedProducts() {
+  try {
+    const response = await fetch(
+      `${API_URL}?query=featured&number=5&apiKey=${API_KEY}`
+    );
+    const data = await response.json();
+
+    const featuredContainer = document.getElementById("featured-products");
+    featuredContainer.innerHTML = "";
+
+    if (data.products && data.products.length > 0) {
+      data.products.forEach((product) => {
+        const productElement = document.createElement("div");
+        productElement.classList.add("product-item");
+        productElement.innerHTML = `
+                    <h3>${product.title}</h3>
+                    <img src="${product.image || "placeholder.jpg"}" alt="${
+          product.title
+        }" width="100">
+                    <p>Price: ${product.price ? `$${product.price}` : "N/A"}</p>
+                    <p>Discount: ${
+                      product.discount ? `${product.discount}%` : "N/A"
+                    }</p>
+                    <p>Price Drop: ${
+                      product.priceDrop ? `$${product.priceDrop}` : "N/A"
+                    }</p>
+                    <p>Store: ${product.store || "Unknown"}</p>
+                    <p>Rating: ${product.rating || "No rating available"}</p>
+                `;
+        featuredContainer.appendChild(productElement);
+      });
+    } else {
+      featuredContainer.innerHTML = "<p>No featured products available.</p>";
+    }
+  } catch (error) {
+    console.error("Error fetching featured products:", error);
+  }
+}
+
+// Call the function on page load
+document.addEventListener("DOMContentLoaded", fetchFeaturedProducts);
+
+// Fetch and display promotions
+async function fetchPromotions() {
+  try {
+    const response = await fetch(
+      `${API_URL}?query=promotion&number=5&apiKey=${API_KEY}`
+    );
+    const data = await response.json();
+
+    const promotionsContainer = document.getElementById("promotions");
+    promotionsContainer.innerHTML = "";
+
+    if (data.products && data.products.length > 0) {
+      data.products.forEach((product) => {
+        const promotionElement = document.createElement("div");
+        promotionElement.classList.add("promotion-item");
+        promotionElement.innerHTML = `
+                    <h3>${product.title}</h3>
+                    <img src="${product.image || "placeholder.jpg"}" alt="${
+          product.title
+        }" width="100">
+                    <p>Price: ${product.price ? `$${product.price}` : "N/A"}</p>
+                    <p>Discount: ${
+                      product.discount ? `${product.discount}%` : "N/A"
+                    }</p>
+                    <p>Price Drop: ${
+                      product.priceDrop ? `$${product.priceDrop}` : "N/A"
+                    }</p>
+                    <p>Store: ${product.store || "Unknown"}</p>
+                    <p>Rating: ${product.rating || "No rating available"}</p>
+                `;
+        promotionsContainer.appendChild(promotionElement);
+      });
+    } else {
+      promotionsContainer.innerHTML = "<p>No promotions available.</p>";
+    }
+  } catch (error) {
+    console.error("Error fetching promotions:", error);
+  }
+}
+
+// Call the function on page load
+document.addEventListener("DOMContentLoaded", fetchPromotions);
+
+// Fetch and display discount notifications
+async function fetchDiscountNotifications() {
+  try {
+    const response = await fetch(
+      `${API_URL}?query=discount&number=5&apiKey=${API_KEY}`
+    );
+    const data = await response.json();
+
+    const discountContainer = document.getElementById("discount-notifications");
+    discountContainer.innerHTML = "";
+
+    if (data.products && data.products.length > 0) {
+      data.products.forEach((product) => {
+        const discountElement = document.createElement("div");
+        discountElement.classList.add("discount-item");
+        discountElement.innerHTML = `
+                    <h3>${product.title}</h3>
+                    <img src="${product.image || "placeholder.jpg"}" alt="${
+          product.title
+        }" width="100">
+                    <p>Price: ${product.price ? `$${product.price}` : "N/A"}</p>
+                    <p>Discount: ${
+                      product.discount ? `${product.discount}%` : "N/A"
+                    }</p>
+                    <p>Price Drop: ${
+                      product.priceDrop ? `$${product.priceDrop}` : "N/A"
+                    }</p>
+                    <p>Store: ${product.store || "Unknown"}</p>
+                    <p>Rating: ${product.rating || "No rating available"}</p>
+                `;
+        discountContainer.appendChild(discountElement);
+      });
+    } else {
+      discountContainer.innerHTML = "<p>No discounts available.</p>";
+    }
+  } catch (error) {
+    console.error("Error fetching discount notifications:", error);
+  }
+}
+
+// Call the function on page load
+document.addEventListener("DOMContentLoaded", fetchDiscountNotifications);
+
 // Handle search form submission
 document
   .getElementById("search-form")
@@ -57,3 +186,10 @@ document
         "<p>Error fetching search results. Please try again later.</p>";
     }
   });
+
+// Call the functions on page load
+document.addEventListener("DOMContentLoaded", () => {
+  fetchFeaturedProducts();
+  fetchPromotions();
+  fetchDiscountNotifications();
+});
