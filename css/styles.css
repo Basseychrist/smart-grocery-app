@@ -9,8 +9,8 @@
 body {
   font-family: Arial, sans-serif;
   line-height: 1.6;
-  color: #333;
-  background-color: #f9f9f9;
+  color: #333; /* Dark text */
+  background-color: #f9f9f9; /* Light background */
   padding: 0;
   margin: 0;
 }
@@ -179,6 +179,25 @@ footer {
   background-color: #218838;
 }
 
+/* Button Styling */
+button {
+  background-color: #28a745; /* Green button */
+  color: #fff; /* White text */
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: transform 0.2s ease, background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #218838; /* Slightly darker green for hover */
+}
+
+button:active {
+  transform: scale(0.95); /* Add a "pressed" effect */
+}
+
 /* Price Comparison Results */
 #price-results {
   margin-top: 1rem;
@@ -295,4 +314,20 @@ footer {
 .discount-item p {
   margin: 0.5rem 0;
   color: #555;
+}
+
+/* High Contrast Text */
+h1,
+h2,
+h3 {
+  color: #000; /* Ensure headings are fully black for contrast */
+}
+
+a {
+  color: #007bff; /* Blue links */
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
 }

@@ -17,6 +17,47 @@ async function testAPIConnection() {
 // Call the test function
 testAPIConnection();
 
+// Handle search form submission
+document
+  .getElementById("search-form")
+  .addEventListener("submit", async (event) => {
+    event.preventDefault();
+
+    const query = document.getElementById("search-input").value;
+    const resultsContainer = document.getElementById("search-results");
+    resultsContainer.innerHTML = "<p>Loading...</p>";
+
+    try {
+      const response = await fetch(
+        `${API_URL}?query=${query}&number=5&apiKey=${API_KEY}`
+      );
+      const data = await response.json();
+
+      // Display search results
+      resultsContainer.innerHTML = "";
+      if (data.products && data.products.length > 0) {
+        data.products.forEach((product) => {
+          const productElement = document.createElement("div");
+          productElement.classList.add("product-item");
+          productElement.innerHTML = `
+          <h3>${product.title}</h3>
+          <p>Price: ${product.price ? `$${product.price}` : "N/A"}</p>
+          <img src="${product.image || "placeholder.jpg"}" alt="${
+            product.title
+          }" width="100">
+        `;
+          resultsContainer.appendChild(productElement);
+        });
+      } else {
+        resultsContainer.innerHTML = "<p>No products found.</p>";
+      }
+    } catch (error) {
+      console.error("Error fetching search results:", error);
+      resultsContainer.innerHTML =
+        "<p>Error fetching search results. Please try again later.</p>";
+    }
+  });
+
 // Fetch and display featured products
 async function fetchFeaturedProducts() {
   try {
@@ -56,9 +97,6 @@ async function fetchFeaturedProducts() {
     console.error("Error fetching featured products:", error);
   }
 }
-
-// Call the function on page load
-document.addEventListener("DOMContentLoaded", fetchFeaturedProducts);
 
 // Fetch and display promotions
 async function fetchPromotions() {
@@ -100,9 +138,6 @@ async function fetchPromotions() {
   }
 }
 
-// Call the function on page load
-document.addEventListener("DOMContentLoaded", fetchPromotions);
-
 // Fetch and display discount notifications
 async function fetchDiscountNotifications() {
   try {
@@ -142,50 +177,6 @@ async function fetchDiscountNotifications() {
     console.error("Error fetching discount notifications:", error);
   }
 }
-
-// Call the function on page load
-document.addEventListener("DOMContentLoaded", fetchDiscountNotifications);
-
-// Handle search form submission
-document
-  .getElementById("search-form")
-  .addEventListener("submit", async (event) => {
-    event.preventDefault();
-
-    const query = document.getElementById("search-input").value;
-    const resultsContainer = document.getElementById("search-results");
-    resultsContainer.innerHTML = "<p>Loading...</p>";
-
-    try {
-      const response = await fetch(
-        `${API_URL}?query=${query}&number=5&apiKey=${API_KEY}`
-      );
-      const data = await response.json();
-
-      // Display search results
-      resultsContainer.innerHTML = "";
-      if (data.products && data.products.length > 0) {
-        data.products.forEach((product) => {
-          const productElement = document.createElement("div");
-          productElement.classList.add("product-item");
-          productElement.innerHTML = `
-          <h3>${product.title}</h3>
-          <p>Price: ${product.price ? `$${product.price}` : "N/A"}</p>
-          <img src="${product.image || "placeholder.jpg"}" alt="${
-            product.title
-          }" width="100">
-        `;
-          resultsContainer.appendChild(productElement);
-        });
-      } else {
-        resultsContainer.innerHTML = "<p>No products found.</p>";
-      }
-    } catch (error) {
-      console.error("Error fetching search results:", error);
-      resultsContainer.innerHTML =
-        "<p>Error fetching search results. Please try again later.</p>";
-    }
-  });
 
 // Call the functions on page load
 document.addEventListener("DOMContentLoaded", () => {

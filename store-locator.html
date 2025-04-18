@@ -23,27 +23,22 @@
   <body>
     <header>
       <h1>Store Locator</h1>
-      <nav>
-        <a href="index.html">Home</a>
-        <a href="price-comparison.html">Price Comparison</a>
-        <a href="shopping-list.html">Shopping List</a>
-        <a href="user-dashboard.html">Dashboard</a>
-      </nav>
+      <label for="store-search">Enter a location to find stores:</label>
+      <input
+        type="text"
+        id="store-search"
+        placeholder="Enter a location"
+        aria-label="Search for a store"
+      />
+      <button id="search-button" aria-label="Search for stores">Search</button>
     </header>
     <main>
-      <section>
-        <h2>Find Nearby Stores</h2>
-        <input
-          type="text"
-          id="store-search"
-          placeholder="Enter your location"
-        />
-        <button id="search-button">Search</button>
-        <div
-          id="map"
-          style="width: 100%; height: 500px; margin-top: 1rem"
-        ></div>
-      </section>
+      <div
+        id="map"
+        style="width: 100%; height: 500px"
+        role="region"
+        aria-label="Map showing store locations"
+      ></div>
     </main>
     <footer>
       <p>&copy; 2025 Smart Grocery App</p>
